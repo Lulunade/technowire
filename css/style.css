@@ -1,0 +1,230 @@
+:root {
+  --overlay-color: rgba(0, 187, 255, 0.75);
+  --menu-speed: 0.75s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #000;
+  font-family: 'Agency FB', sans-serif;
+  font-size: 14pt;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 5vw;
+  text-align: center;
+}
+
+
+.logo {
+  display: flex;
+  justify-content: center;
+  /*align-items: center;*/
+  background-color: #00DAFF;
+  object-fit: contain;
+  width: 100vw;
+}
+
+.logo img {
+  width: 100%;
+}
+
+span {
+  color: #FFF;
+}
+
+.logo img {
+  width: 40vh;
+}
+
+.menu-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+nav {
+  display: none;
+}
+
+.menu-wrap .toggler {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+}
+
+/* create container for hamburger menu */
+.menu-wrap .hamburger {
+  position: fixed;
+  top: 0.6em;
+  right: 0;
+  z-index: 1;
+  height: 64px;
+  width: 64px;
+  padding: 1rem;
+  /*background: #00DAFF;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* create middle stroke for the menu */
+.menu-wrap .hamburger > div {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+/* add '::after' so that I don't have to retype everything, apart from position */
+.menu-wrap .hamburger > div::before,
+.menu-wrap .hamburger > div::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background-color: inherit;
+}
+
+/* change the position of the third stroke */
+.menu-wrap .hamburger > div::after {
+  top: 10px;
+}
+
+/* Animate Toggler */
+.menu-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+
+/* turn strokes into an X */
+.menu-wrap .toggler:checked + .hamburger > div::before,
+.menu-wrap .toggler:checked + .hamburger > div::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* background color of the menu wrap menu toggler is checked */
+.menu-wrap .toggler:checked + .hamburger {
+  /*background-color: var(--overlay-color);*/
+}
+
+/* rotate on hover when the toggler is checked */
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
+  /*background-color: #00DAFF;*/
+}
+
+/* show menu */
+.menu-wrap .toggler:checked ~ .menu {
+  visibility: visible;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div{
+  transform: scale(1);
+  transition-duration: var(--menu-speed);
+}
+
+.menu-wrap .toggler:checked ~ .menu > div > div {
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 10.5vh;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-wrap .menu > div {
+  background-color: var(--overlay-color);
+  /*border-radius: 50%;*/
+  width: 200vw;
+  height: 200vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: all 0.4s ease;
+}
+
+.menu-wrap .menu > div > div {
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu > div > div > ul > li {
+  list-style: none;
+  color: black;
+  font-size: 1rem;
+}
+
+.menu-wrap .menu > div > div > ul > li > a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+
+.menu-wrap .menu > div > div > ul > li > a:hover {
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 1000px) {
+  nav {
+    height: 100%;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background-color: #0BF;
+  }
+
+  nav a {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+  }
+
+  nav a:hover {
+    font-weight: bolder;
+  }
+
+  .logo img {
+    margin-right: 20vw;
+    width: 40vh;
+  }
+
+  .menu-wrap {
+    display: none;
+  }
+}

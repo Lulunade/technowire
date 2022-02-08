@@ -1,0 +1,149 @@
+.ontwikkeling-talen .taal {
+  /*border: 10px solid #00AFFF;*/
+  border-radius: 6px;
+  width: 90vw;
+  margin: 2rem auto;
+  background-color: #00BBFF;
+  padding: 0 0 3em 0;
+}
+
+.ontwikkeling-talen img{
+  width: 30%;
+  padding-top: 3em;
+  padding-bottom: 1em;
+  margin: 0 5vw 0;
+}
+
+.ontwikkeling-talen table {
+  margin: 0 5vw 0;
+  padding-top: 3em;
+  padding-bottom: 1em;
+}
+
+.ontwikkeling-talen .introductie-talen {
+
+}
+
+.ontwikkeling-talen .introductie-talen p {
+  border-radius: 6px;
+  width: 90vw;
+  margin: 2rem auto;
+  background-color: #00BBFF;
+  padding: 1em;
+}
+
+.ontwikkeling-talen .introductie-talen p span {
+  font-style: normal;
+}
+
+.ontwikkeling-talen p {
+  margin: 0 5vw 0;
+  font-size: 1.3rem;
+  margin-bottom: 3vh;
+  padding-top: 3em;
+}
+
+.fortran {
+  margin: 10vh 0 0 0;
+}
+
+
+table tr td {
+  font-size: 5vw;
+}
+
+table tr td:nth-of-type(1) {
+  color: #FFF
+}
+
+@media only screen and (min-width: 750px) {
+  table tr td {
+    font-size: 7vw;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .flex {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .ontwikkeling-talen {
+    margin-right: 20vw;
+  }
+
+  .ontwikkeling-talen img {
+    width: 10%;
+    object-fit: contain;
+    position: relative;
+    right: 5vw;
+  }
+
+  .ontwikkeling-talen .taal {
+    width: 70vw;
+    border-radius: 6px;
+    margin: 5em auto;
+    padding: 1em;
+  }
+
+  .ontwikkeling-talen .taal p {
+    font-size: 1.3rem;
+    max-width: 60vw;
+  }
+
+  .ontwikkeling-talen .introductie-talen {
+    width: 70vw;
+    margin: 0 auto;
+  }
+
+  .ontwikkeling-talen .introductie-talen p {
+    max-width: 60vw;
+  }
+
+  .ontwikkeling-talen .introductie-talen {
+    font-size: 1.2rem;
+    max-width: 70vw;
+  }
+
+  table tr td {
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .fortran img,
+  .c img,
+  .pascal img,
+  .perl img,
+  .php img,
+  .javascript img,
+  .ruby-on-rails img {
+    margin-right: 17vw;
+  }
+
+  .c-plus-plus img {
+    margin-right: 15vw;
+  }
+
+  .ruby img {
+    margin-right: 10vw;
+  }
+
+  .python img {
+    margin-right: 15vw;
+  }
+
+  .cobol img {
+    margin-right: 10vw;
+  }
+
+  .basic img {
+    margin-right: 6vw;
+  }
+
+  .java img {
+    margin-right: 16vw;
+  }
+}

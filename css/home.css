@@ -1,0 +1,27 @@
+.introductie p {
+  background-color: #00BBFF;
+  padding: 1em;
+  max-width: 80vw;
+  border-radius: 6px;
+  margin: 0 auto;
+}
+
+
+.introductie h1 {
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 1000px) {
+  .introductie {
+    margin-right: 20vw;
+  }
+
+  .introductie p {
+    background-color: #00BBFF;
+    padding: 1em;
+    max-width: 60vw;
+    border-radius: 6px;
+    margin: 0 auto;
+    font-size: 1.5rem;
+  }
+}
